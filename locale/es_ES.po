@@ -1,0 +1,55 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "ACCOUNT NUM."
+msgstr "Nº DE CUENTA"
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "ADDRESS"
+msgstr "DIRECCIÓN"
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "Clauses:"
+msgstr "Cláusulas:"
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "DATE"
+msgstr "FECHA"
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "For this RECEIPT you will pay on specified maturity"
+msgstr "Por este RECIBO pagará usted al vencimiento expresado"
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "IMPORT EUROS"
+msgstr "IMPORTE EUROS"
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "INVOICE NUM."
+msgstr "FACTURA NUM."
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "MATURITY"
+msgstr "VENCIMIENTO"
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "PERSON OR ENTITY"
+msgstr "PERSONA O ENTIDAD"
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "RECEIPT NUM."
+msgstr "RECIBO NUM."
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "payment at the address below:"
+msgstr "en el domicilio de pago siguiente"
+
+msgctxt "jasper:account.move.line.receipt:"
+msgid "the quantity of:"
+msgstr "la cantidad de:"
+
+msgctxt "model:ir.action,name:report_account_move_line_receipt"
+msgid "Receipt"
+msgstr "Recibo"
