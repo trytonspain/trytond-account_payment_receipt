@@ -1,4 +1,4 @@
-#:after:account_payment/account_payment:section:pagos#
+#:after:account/account:section:conciliar#
 
 Imprimir un recibo
 ==================
