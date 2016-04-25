@@ -1,6 +1,10 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:account.move.line,debit_literal:"
+msgid "Debit Literal"
+msgstr "Literal del debe"
 
 msgctxt "jasper:account.move.line.receipt:"
 msgid "ACCOUNT NUM."
@@ -9,10 +13,6 @@ msgstr "Nº DE CUENTA"
 msgctxt "jasper:account.move.line.receipt:"
 msgid "ADDRESS"
 msgstr "DIRECCIÓN"
-
-msgctxt "jasper:account.move.line.receipt:"
-msgid "Clauses:"
-msgstr "Cláusulas:"
 
 msgctxt "jasper:account.move.line.receipt:"
 msgid "DATE"
