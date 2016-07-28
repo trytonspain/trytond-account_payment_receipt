@@ -3,18 +3,17 @@
      copyright notices and license terms. -->
 <tryton>
     <data>
-        <record model="ir.action.report" id="report_account_move_line_receipt">
+        <record model="ir.action.report" id="report_receipt">
             <field name="name">Receipt</field>
-            <field name="model">account.move.line</field>
-            <field name="report_name">account.move.line.receipt</field>
-            <field name="report">account_payment_receipt/account_move_line_receipt.jrxml</field>
+            <field name="model">account.payment</field>
+            <field name="report_name">account.payment.receipt</field>
+            <field name="report">account_payment_receipt/receipt.jrxml</field>
             <field name="extension">pdf</field>
         </record>
-        <record model="ir.action.keyword"
-                id="report_account_move_line_keyword">
+        <record model="ir.action.keyword" id="report_receipt_keyword">
             <field name="keyword">form_print</field>
-            <field name="model">account.move.line,-1</field>
-            <field name="action" ref="report_account_move_line_receipt"/>
+            <field name="model">account.payment,-1</field>
+            <field name="action" ref="report_receipt"/>
         </record>
     </data>
 </tryton>

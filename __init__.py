@@ -6,7 +6,7 @@ from .account import *
 
 def register():
     Pool.register(
-        MoveLine,
+        Payment,
         module='account_payment_receipt', type_='model')
     Pool.register(
         Receipt,

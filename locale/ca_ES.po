@@ -1,55 +1,51 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "jasper:account.move.line.receipt:"
+msgctxt "jasper:account.payment.receipt:"
 msgid "ACCOUNT NUM."
 msgstr "NÚM COMPTE"
 
-msgctxt "jasper:account.move.line.receipt:"
+msgctxt "jasper:account.payment.receipt:"
 msgid "ADDRESS"
 msgstr "DIRECCIÓ"
 
-msgctxt "jasper:account.move.line.receipt:"
-msgid "Clauses:"
-msgstr "Clàusules"
-
-msgctxt "jasper:account.move.line.receipt:"
+msgctxt "jasper:account.payment.receipt:"
 msgid "DATE"
 msgstr "DATA"
 
-msgctxt "jasper:account.move.line.receipt:"
+msgctxt "jasper:account.payment.receipt:"
 msgid "For this RECEIPT you will pay on specified maturity"
 msgstr "Per aquest REBUT vostè pagarà al venciment expressat"
 
-msgctxt "jasper:account.move.line.receipt:"
+msgctxt "jasper:account.payment.receipt:"
 msgid "IMPORT EUROS"
 msgstr "IMPORT EUROS"
 
-msgctxt "jasper:account.move.line.receipt:"
+msgctxt "jasper:account.payment.receipt:"
 msgid "INVOICE NUM."
 msgstr "FACTURA NÚM."
 
-msgctxt "jasper:account.move.line.receipt:"
+msgctxt "jasper:account.payment.receipt:"
 msgid "MATURITY"
 msgstr "VENCIMENT"
 
-msgctxt "jasper:account.move.line.receipt:"
+msgctxt "jasper:account.payment.receipt:"
 msgid "PERSON OR ENTITY"
 msgstr "PERSONA O ENTITAT"
 
-msgctxt "jasper:account.move.line.receipt:"
+msgctxt "jasper:account.payment.receipt:"
 msgid "RECEIPT NUM."
 msgstr "REBUT NÚM."
 
-msgctxt "jasper:account.move.line.receipt:"
+msgctxt "jasper:account.payment.receipt:"
 msgid "payment at the address below:"
 msgstr "al domicili de pagament següent:"
 
-msgctxt "jasper:account.move.line.receipt:"
+msgctxt "jasper:account.payment.receipt:"
 msgid "the quantity of:"
 msgstr "la quantitat de:"
 
-msgctxt "model:ir.action,name:report_account_move_line_receipt"
+msgctxt "model:ir.action,name:report_receipt"
 msgid "Receipt"
 msgstr "Rebut"

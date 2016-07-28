@@ -52,52 +52,52 @@
 		<fieldDescription><![CDATA[/data/record/party/lang/code]]></fieldDescription>
 	</field>
 	<field name="company_logo" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/account/company/logo]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company/logo]]></fieldDescription>
 	</field>
 	<field name="company_name" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/account/company/rec_name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company/rec_name]]></fieldDescription>
 	</field>
 	<field name="company_street" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/account/company/party/addresses/street]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company/party/addresses/street]]></fieldDescription>
 	</field>
 	<field name="company_street2" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/account/company/party/addresses/streetbis]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company/party/addresses/streetbis]]></fieldDescription>
 	</field>
 	<field name="company_zip" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/account/company/party/addresses/zip]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company/party/addresses/zip]]></fieldDescription>
 	</field>
 	<field name="company_city" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/account/company/party/addresses/city]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company/party/addresses/city]]></fieldDescription>
 	</field>
 	<field name="company_state" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/account/company/party/addresses/subdivision/rec_name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company/party/addresses/subdivision/rec_name]]></fieldDescription>
 	</field>
 	<field name="company_country" class="java.lang.Object">
-		<fieldDescription><![CDATA[/data/record/account/company/party/addresses/country/rec_name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company/party/addresses/country/rec_name]]></fieldDescription>
 	</field>
 	<field name="company_phone" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/account/company/party/phone]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company/party/phone]]></fieldDescription>
 	</field>
 	<field name="company_email" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/account/company/party/email]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company/party/email]]></fieldDescription>
 	</field>
 	<field name="company_vat" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/account/company/party/vat_code]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/company/party/vat_code]]></fieldDescription>
 	</field>
 	<field name="invoice-number" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/origin/rec_name]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/line/origin/rec_name]]></fieldDescription>
 	</field>
-	<field name="debit" class="java.lang.Number">
-		<fieldDescription><![CDATA[/data/record/debit]]></fieldDescription>
+	<field name="amount" class="java.lang.Number">
+		<fieldDescription><![CDATA[/data/record/amount]]></fieldDescription>
 	</field>
-	<field name="debit_literal" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/debit_literal]]></fieldDescription>
+	<field name="amount_literal" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/amount_literal]]></fieldDescription>
 	</field>
 	<field name="date" class="java.util.Date">
 		<fieldDescription><![CDATA[/data/record/date]]></fieldDescription>
 	</field>
 	<field name="date_maturity" class="java.util.Date">
-		<fieldDescription><![CDATA[/data/record/maturity_date]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/line/maturity_date]]></fieldDescription>
 	</field>
 	<field name="partner-name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/party/rec_name]]></fieldDescription>
@@ -112,10 +112,7 @@
 		<fieldDescription><![CDATA[/data/record/bank_account/rec_name]]></fieldDescription>
 	</field>
 	<field name="receipt_number" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/move/post_number]]></fieldDescription>
-	</field>
-	<field name="credit" class="java.lang.Number">
-		<fieldDescription><![CDATA[/data/record/credit]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/line/move/post_number]]></fieldDescription>
 	</field>
 	<field name="description" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/description]]></fieldDescription>
@@ -124,47 +121,62 @@
 		<variableExpression><![CDATA[$F{lang} != null && $F{lang}.length() == 5 ? new Locale( $F{lang}.substring(0,2), $F{lang}.substring(3,5) ) : ( $F{lang} != null && $F{lang}.length() == 2 ? new Locale( $F{lang}.substring(0,2) ) : $P{REPORT_LOCALE} )]]></variableExpression>
 		<initialValueExpression><![CDATA[$F{lang} != null && $F{lang}.length() == 5 ? new Locale( $F{lang}.substring(0,2), $F{lang}.substring(3,5) ) : ( $F{lang} != null && $F{lang}.length() == 2 ? new Locale( $F{lang}.substring(0,2) ) : $P{REPORT_LOCALE} )]]></initialValueExpression>
 	</variable>
-	<variable name="amount" class="java.lang.Number">
-		<variableExpression><![CDATA[($F{debit} == null ? 0.0 : $F{debit} ) +
-( $F{credit} == null ? 0.0 : $F{credit} )]]></variableExpression>
-		<initialValueExpression><![CDATA[]]></initialValueExpression>
-	</variable>
 	<title>
 		<band splitType="Stretch"/>
 	</title>
 	<pageHeader>
 		<band height="70" splitType="Stretch">
-			<image onErrorType="Icon">
-				<reportElement uuid="34e5ffb8-fd39-4e0d-bbcd-db4ddd735f51" x="0" y="3" width="81" height="63"/>
+			<image onErrorType="Blank">
+				<reportElement x="0" y="3" width="81" height="67" uuid="34e5ffb8-fd39-4e0d-bbcd-db4ddd735f51"/>
 				<imageExpression><![CDATA[$F{company_logo}]]></imageExpression>
 			</image>
 			<textField isStretchWithOverflow="true">
-				<reportElement uuid="cafcc4ff-1106-4b67-a6e7-5b7f0f32d322" x="81" y="25" width="250" height="41" forecolor="#666666"/>
+				<reportElement x="81" y="21" width="250" height="12" forecolor="#666666" uuid="cafcc4ff-1106-4b67-a6e7-5b7f0f32d322"/>
 				<textElement verticalAlignment="Middle">
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{company_street} + " " + $F{company_street2} + " \n" +
-$F{company_zip} + " " + $F{company_city} + " (" + $F{company_state} + ") " + $F{company_country}.get($F{lang}) + "\n" +
-"Tel: " + $F{company_phone} +
+				<textFieldExpression><![CDATA[$F{company_street} + " " + $F{company_street2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="81" y="3" width="250" height="15" forecolor="#666666" uuid="1febe421-3e6a-4af3-bbec-cd90fbabce31"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{company_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="81" y="33" width="250" height="12" forecolor="#666666" uuid="ffc63123-baea-4c3a-b351-b528a0702336"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{company_zip} + " " + $F{company_city} + " (" + $F{company_state} + ") " + ($F{company_country}.get($F{lang}) != null ? $F{company_country}.get($F{lang}) : "")
+]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="81" y="45" width="250" height="12" forecolor="#666666" uuid="1079afbe-ec04-4cb1-9278-5c1ea8fe76ae"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tel: " + $F{company_phone} +
 (
 $F{company_email} == "" || $F{company_email} == null ?
   ""
 :
   " - e-mail: " + $F{company_email}
-) +
-(
+)
+]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="81" y="57" width="250" height="12" forecolor="#666666" uuid="a83c5592-207e-4588-9949-5039472c6480"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(
 $F{company_vat} == null || $F{company_vat} == "" ?
   ""
 :
   "\n" + "CIF: " + $F{company_vat}.substring(0,2) + "-" + $F{company_vat}.substring(2)
 )]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="1febe421-3e6a-4af3-bbec-cd90fbabce31" x="81" y="9" width="250" height="15" forecolor="#666666"/>
-				<textElement verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{company_name}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
@@ -174,169 +186,165 @@ $F{company_vat} == null || $F{company_vat} == "" ?
 	<detail>
 		<band height="291" splitType="Stretch">
 			<rectangle>
-				<reportElement uuid="547dadc6-1b11-4300-8fdb-595a16f1f2e5" mode="Opaque" x="0" y="14" width="100" height="35" backcolor="#DDEEFF"/>
+				<reportElement mode="Opaque" x="0" y="14" width="100" height="35" backcolor="#DDEEFF" uuid="547dadc6-1b11-4300-8fdb-595a16f1f2e5"/>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="c6107c2b-dbda-40a6-87be-62e132b86603" mode="Opaque" x="117" y="14" width="100" height="35" backcolor="#DDEEFF"/>
+				<reportElement mode="Opaque" x="117" y="14" width="100" height="35" backcolor="#DDEEFF" uuid="c6107c2b-dbda-40a6-87be-62e132b86603"/>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="72059684-320d-4543-923d-bd92171bff3f" mode="Opaque" x="0" y="58" width="217" height="35" backcolor="#DDEEFF"/>
+				<reportElement mode="Opaque" x="0" y="58" width="217" height="35" backcolor="#DDEEFF" uuid="72059684-320d-4543-923d-bd92171bff3f"/>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="f1ae60bf-7a54-4457-836a-7cdeb4e6a233" mode="Opaque" x="312" y="58" width="243" height="35" backcolor="#DDEEFF"/>
+				<reportElement mode="Opaque" x="312" y="58" width="243" height="35" backcolor="#DDEEFF" uuid="f1ae60bf-7a54-4457-836a-7cdeb4e6a233"/>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="a3f7e9f4-bfc9-4aeb-b56b-20d1983383fe" mode="Opaque" x="445" y="14" width="110" height="35" backcolor="#DDEEFF"/>
+				<reportElement mode="Opaque" x="445" y="14" width="110" height="35" backcolor="#DDEEFF" uuid="a3f7e9f4-bfc9-4aeb-b56b-20d1983383fe"/>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="32edb011-a1c9-4663-89fe-637d22bdf5f9" mode="Opaque" x="0" y="245" width="555" height="45" backcolor="#DDEEFF"/>
+				<reportElement mode="Opaque" x="0" y="245" width="555" height="45" backcolor="#DDEEFF" uuid="32edb011-a1c9-4663-89fe-637d22bdf5f9"/>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="59919e4f-3a43-4172-8ae4-32ef21736358" mode="Opaque" x="0" y="173" width="389" height="61" backcolor="#DDEEFF"/>
+				<reportElement mode="Opaque" x="0" y="173" width="389" height="61" backcolor="#DDEEFF" uuid="59919e4f-3a43-4172-8ae4-32ef21736358"/>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="b20e0dd2-8c33-48b1-8861-d82d8a8cac8a" mode="Opaque" x="402" y="173" width="153" height="61" backcolor="#DDEEFF"/>
+				<reportElement mode="Opaque" x="402" y="173" width="153" height="61" backcolor="#DDEEFF" uuid="b20e0dd2-8c33-48b1-8861-d82d8a8cac8a"/>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="b7e079b4-e45f-4b3e-8f0f-8cc801f404f6" mode="Opaque" x="0" y="114" width="555" height="47" backcolor="#DDEEFF"/>
+				<reportElement mode="Opaque" x="0" y="114" width="555" height="47" backcolor="#DDEEFF" uuid="b7e079b4-e45f-4b3e-8f0f-8cc801f404f6"/>
 				<graphicElement>
 					<pen lineWidth="0.0"/>
 				</graphicElement>
 			</rectangle>
 			<textField>
-				<reportElement uuid="a8e74e9c-e416-4f95-8dcd-b9a47aebd57c" style="fields_label" x="0" y="14" width="100" height="15"/>
+				<reportElement style="fields_label" x="0" y="14" width="100" height="15" uuid="a8e74e9c-e416-4f95-8dcd-b9a47aebd57c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[tr($V{L},"RECEIPT NUM.")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="567fe8f1-bc69-4a8e-b658-617898d31832" style="fields_label" x="117" y="14" width="100" height="15"/>
+				<reportElement style="fields_label" x="117" y="14" width="100" height="15" uuid="567fe8f1-bc69-4a8e-b658-617898d31832"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[tr($V{L},"INVOICE NUM.")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="1274c69e-d73a-4c90-bf0d-a292b0baa0cb" style="fields_value" x="117" y="29" width="100" height="20"/>
+				<reportElement style="fields_value" x="117" y="29" width="100" height="20" uuid="1274c69e-d73a-4c90-bf0d-a292b0baa0cb"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{invoice-number}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="5fd6c7a3-e42e-4710-8b10-af37a2f5fa95" style="fields_value" x="0" y="129" width="555" height="32"/>
+				<reportElement style="fields_value" x="0" y="129" width="555" height="32" uuid="5fd6c7a3-e42e-4710-8b10-af37a2f5fa95"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{debit_literal}.toLowerCase()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{amount_literal}.toLowerCase()]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement uuid="2ba2829c-9ac3-4bcc-8022-b92d2a557349" style="fields_value" x="119" y="215" width="270" height="15"/>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="fields_value" x="119" y="215" width="270" height="15" uuid="2ba2829c-9ac3-4bcc-8022-b92d2a557349"/>
 				<textElement verticalAlignment="Bottom"/>
 				<textFieldExpression><![CDATA[$F{partner-street} + ($F{partner-street2} != ""? ", " + $F{partner-street2} : "")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="c814af2b-f6a1-4a18-b65e-fb15edd60151" style="fields_value" x="119" y="194" width="270" height="15"/>
+				<reportElement style="fields_value" x="119" y="194" width="270" height="15" uuid="c814af2b-f6a1-4a18-b65e-fb15edd60151"/>
 				<textElement verticalAlignment="Bottom"/>
 				<textFieldExpression><![CDATA[$F{partner-name}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="5d511f8f-b1b4-45d2-9567-937c1f5e1664" style="fields_label" x="402" y="173" width="153" height="15"/>
+				<reportElement style="fields_label" x="402" y="173" width="153" height="15" uuid="5d511f8f-b1b4-45d2-9567-937c1f5e1664"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[tr($V{L},"ACCOUNT NUM.")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="490765d3-05ba-4f12-be14-979f2b90d414" x="312" y="257" width="243" height="20"/>
+				<reportElement x="312" y="257" width="243" height="20" uuid="490765d3-05ba-4f12-be14-979f2b90d414"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{company_name}.toUpperCase()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="b394b142-aae4-4a7e-8c9b-247711bcb1e4" style="fields_label" x="6" y="245" width="283" height="32"/>
+				<reportElement style="fields_label" x="6" y="245" width="283" height="32" uuid="b394b142-aae4-4a7e-8c9b-247711bcb1e4"/>
 				<textElement verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="f92348e1-570a-4e43-a362-6628fe5f229a" style="fields_value" x="312" y="73" width="100" height="20"/>
+				<reportElement style="fields_value" x="312" y="73" width="100" height="20" uuid="f92348e1-570a-4e43-a362-6628fe5f229a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{date_maturity} == null ? "" :
 "" + new SimpleDateFormat("dd/MM/yyyy").format($F{date_maturity})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="557b194a-d65c-4383-8525-7604844a576d" style="fields_value" x="445" y="29" width="110" height="20"/>
+				<reportElement style="fields_value" x="445" y="29" width="110" height="20" uuid="557b194a-d65c-4383-8525-7604844a576d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA["# "+ new java.text.DecimalFormat("#,##0.00 €").format($V{amount}) + " #"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["# "+ new java.text.DecimalFormat("#,##0.00 €").format($F{amount}) + " #"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="3610b29a-96ce-4664-8d72-04d29b970d23" style="fields_label" x="0" y="58" width="100" height="15"/>
+				<reportElement style="fields_label" x="0" y="58" width="100" height="15" uuid="3610b29a-96ce-4664-8d72-04d29b970d23"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[tr($V{L},"DATE")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="76aee24b-0857-4f79-85ec-bfd6470d6402" style="fields_label" x="312" y="58" width="100" height="15"/>
+				<reportElement style="fields_label" x="312" y="58" width="100" height="15" uuid="76aee24b-0857-4f79-85ec-bfd6470d6402"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[tr($V{L},"MATURITY")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="8ad3d014-f83f-42d4-953d-4951ab369a85" style="fields_value" x="0" y="73" width="100" height="20"/>
+				<reportElement style="fields_value" x="0" y="73" width="100" height="20" uuid="8ad3d014-f83f-42d4-953d-4951ab369a85"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA["" + new SimpleDateFormat("dd/MM/yyyy").format($F{date})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="75d52011-d1b2-4fee-a7a4-400881bdee8b" style="fields_label" x="312" y="93" width="243" height="10"/>
+				<reportElement style="fields_label" x="312" y="93" width="243" height="10" uuid="75d52011-d1b2-4fee-a7a4-400881bdee8b"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[tr($V{L},"For this RECEIPT you will pay on specified maturity")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="167f9f7b-06b7-4917-99be-e6887411cec4" style="fields_label" x="4" y="114" width="252" height="15"/>
-				<textElement/>
+				<reportElement style="fields_label" x="4" y="114" width="252" height="15" uuid="167f9f7b-06b7-4917-99be-e6887411cec4"/>
 				<textFieldExpression><![CDATA[tr($V{L},"the quantity of:")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="9c639069-56e4-4634-86fd-5cd2a9598abd" style="fields_label" x="445" y="14" width="110" height="15"/>
+				<reportElement style="fields_label" x="445" y="14" width="110" height="15" uuid="9c639069-56e4-4634-86fd-5cd2a9598abd"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[tr($V{L},"IMPORT EUROS")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="db766b63-cb3e-4ea8-a842-a1ce80ebedcf" style="fields_label" x="4" y="173" width="252" height="15"/>
-				<textElement/>
+				<reportElement style="fields_label" x="4" y="173" width="252" height="15" uuid="db766b63-cb3e-4ea8-a842-a1ce80ebedcf"/>
 				<textFieldExpression><![CDATA[tr($V{L},"payment at the address below:")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="339ba9b8-eac6-4ea6-aa0c-2a2c860d7930" style="fields_label" x="12" y="194" width="105" height="15"/>
-				<textElement/>
+				<reportElement style="fields_label" x="12" y="194" width="105" height="15" uuid="339ba9b8-eac6-4ea6-aa0c-2a2c860d7930"/>
 				<textFieldExpression><![CDATA[tr($V{L},"PERSON OR ENTITY")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="b40ae5d7-5c89-417d-97de-b2d4af993a64" style="fields_label" x="12" y="215" width="105" height="15"/>
-				<textElement/>
+				<reportElement style="fields_label" x="12" y="215" width="105" height="15" uuid="b40ae5d7-5c89-417d-97de-b2d4af993a64"/>
 				<textFieldExpression><![CDATA[tr($V{L},"ADDRESS")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="2fde7326-8119-4d26-8a4d-d8c1c225b843" x="402" y="188" width="153" height="46"/>
+				<reportElement x="402" y="188" width="153" height="46" uuid="2fde7326-8119-4d26-8a4d-d8c1c225b843"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{bank-acc_number}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="2b543907-490b-43ab-8d49-307c2342e4ed" style="fields_value" x="0" y="29" width="100" height="20"/>
+				<reportElement style="fields_value" x="0" y="29" width="100" height="20" uuid="2b543907-490b-43ab-8d49-307c2342e4ed"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{receipt_number}]]></textFieldExpression>
 			</textField>
