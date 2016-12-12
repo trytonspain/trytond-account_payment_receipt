@@ -20,7 +20,7 @@ class Payment:
         if self.party and self.party.lang:
             lang_code = self.party.lang.code
         if not lang_code or lang_code not in SUPPORTED_LANGS:
-            lang_code = 'en_US'
+            lang_code = 'en'
         return number_to_literal(self.amount, lang_code)
 
 
