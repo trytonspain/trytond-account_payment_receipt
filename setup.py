@@ -7,7 +7,7 @@ import os
 import ConfigParser
 
 MODULE = 'account_payment_receipt'
-PREFIX = 'nantic'
+PREFIX = 'trytonspain'
 MODULE2PREFIX = {
     'jasper_reports': 'trytonspain',
 }
@@ -45,7 +45,7 @@ setup(
     version=info.get('version', '0.0.1'),
     description='',
     long_description=read('README'),
-    author='NaN·tic',
+    author='NaNï¿½tic',
     url='http://www.nan-tic.com/',
     download_url="https://bitbucket.org/nantic/trytond-%s" % MODULE,
     package_dir={'trytond.modules.%s' % MODULE: '.'},
