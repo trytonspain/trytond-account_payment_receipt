@@ -8,9 +8,8 @@ from .number_format import number_to_literal, SUPPORTED_LANGS
 __all__ = ['Payment', 'Receipt']
 
 
-class Payment:
+class Payment(metaclass=PoolMeta):
     __name__ = 'account.payment'
-    __metaclass__ = PoolMeta
 
     amount_literal = fields.Function(fields.Char('Amount Literal'),
         'get_amount_literal')
