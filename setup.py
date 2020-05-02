@@ -66,7 +66,7 @@ requires += [('trytonspain_jasper_reports@git+https://github.com/trytonspain/'
         'branch': branch,
         'series': series,})]
 
-
+dependency_links = []
 if minor_version % 2:
     # Add development index for testing with proteus
     dependency_links.append('https://trydevpi.tryton.org/')
@@ -105,6 +105,7 @@ setup(name='%s_%s' % (PREFIX, MODULE),
         ],
     license='GPL-3',
     install_requires=requires,
+    dependency_links=dependency_links,
     zip_safe=False,
     entry_points="""
     [trytond.modules]
