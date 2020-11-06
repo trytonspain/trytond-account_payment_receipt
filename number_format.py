@@ -142,7 +142,7 @@ def integer_to_literal(input_int, lang_code):
 
         res = []
 
-        hundreds_value = (input_hundred / 100) * 100
+        hundreds_value = (input_hundred // 100) * 100
         if hundreds_value:
             res.append(HUNDREDS[hundreds_value][lang_code])
             input_hundred -= hundreds_value
@@ -155,7 +155,7 @@ def integer_to_literal(input_int, lang_code):
             return res
 
         # XY; X >= 3 and y != 0
-        tens_value = (input_hundred / 10) * 10
+        tens_value = (input_hundred // 10) * 10
         units_value = input_hundred - tens_value
         if TENS_UNITS_SEP and lang_code in TENS_UNITS_SEP:
             res.append(TENS[tens_value][lang_code] + TENS_UNITS_SEP[lang_code]
