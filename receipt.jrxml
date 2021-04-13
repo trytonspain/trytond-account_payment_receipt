@@ -63,8 +63,8 @@
 	<field name="company_street2" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company/party/addresses/streetbis]]></fieldDescription>
 	</field>
-	<field name="company_zip" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company/party/addresses/zip]]></fieldDescription>
+	<field name="company_postal_code" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/company/party/addresses/postal_code]]></fieldDescription>
 	</field>
 	<field name="company_city" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company/party/addresses/city]]></fieldDescription>
@@ -149,7 +149,7 @@
 				<textElement verticalAlignment="Middle">
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{company_zip} + " " + $F{company_city} + " (" + $F{company_state} + ") " + ($F{company_country}.get($F{lang}) != null ? $F{company_country}.get($F{lang}) : "")
+				<textFieldExpression><![CDATA[$F{company_postal_code} + " " + $F{company_city} + " (" + $F{company_state} + ") " + ($F{company_country}.get($F{lang}) != null ? $F{company_country}.get($F{lang}) : "")
 ]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
